@@ -110,73 +110,96 @@
                 <div class="toolbar">
                     <h1>오늘 점심은 어떻게 할까요?</h1>
                     <a class="back" href="#home">Home</a>
-                </div>
-				<form class="scroll">
-					<ul class="rounded">
-						<li>인원<input type="number" name="zip" placeholder="인원" id="some_name" min="1" max="10" value="4"/></li>  
-						<li class="arrow">
-							거리
-							<select id="distance">
-								<optgroup label="거리">
-								<option value ="0" default>거리</option>
-								<option value ="100">100m</option>
-								<option value ="300">300m</option>
-								<option value ="500">500m</option>
-								<option value ="700">700m</option>
-								<option value ="1000">1000m</option>
-								</optgroup>
-							</select>
-						</li>
-						<li>옵션</li>
-						<li><input type="checkbox" name="food1" value="punch1" title="숙취 해소" /></li>
-						<li><input type="checkbox" name="food2" value="punch2" title="얼큰한 국물" /></li>
-						<li><input type="checkbox" name="food3" value="punch3" title="깔끔한 음식" /></li>
-						<li><input type="checkbox" name="food4" value="punch4" title="뷔페" /></li>
-                    </ul>
-                </form>
-            </div>
-            <div id="wherefood">
+                </div> 
+		<form class="scroll" action="/show"> 
+		<ul class="rounded"> 
+		<li>인원<input type="number" name="zip" placeholder="인원" id="some_name" min="1" max="10" value="4"/></li>  
+		<li class="arrow"> 거리 
+		<select id="distance"> 
+			 <optgroup label="거리">
+			 <option value ="0" default>거리</option>
+			 <option value ="100">100m</option>
+			 <option value ="300">300m</option>
+			 <option value ="500">500m</option>
+			 <option value ="700">700m</option>
+			 <option value ="1000">1000m</option>
+			 </optgroup> 
+		</select> 
+		</li> 
+		<li>옵션</li>
+		 <li><input type="checkbox" name="food1" value="punch1" title="숙취 해소" /></li>
+		 <li><input type="checkbox" name="food2" value="punch2" title="얼큰한 국물" /></li>
+		 <li><input type="checkbox" name="food3" value="punch3" title="깔끔한 음식" /></li>
+		 <li><input type="checkbox" name="food4" value="punch4" title="뷔페" /></li>
+                 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
+		 </ul>
+	        </form> 
+	 </div>
+
+	 <div id="wherefood">
+	 <div class="toolbar">
+	 <h1>근처에 맛있는게 뭐가 있지?</h1>
+	 <a class="back" href="#home">Home</a>
+	 	</div>
+	 	<div class="scroll">
+	 	<ul class="rounded">
+	 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
+	 <li class="arrow"><a href="demos/main/ajax.html">GET Example</a></li>
+	 <li class="arrow"><a href="demos/main/ajax_long.html">Long GET Example</a></li>
+	 <li class="arrow"><a href="#callback">With Callback</a></li>
+	 	</ul>
+	 </div>
+         
+	 </div>
+	 <div id="whopay">
+	 <div class="toolbar">
+	 <h1>AJAX</h1>
+	 <a class="back" href="#home">Home</a>
+	 </div>
+	 <div class="scroll">
+	 <ul class="rounded">
+		 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
+		 <li class="arrow"><a href="demos/main/ajax.html">GET Example</a></li>
+		 <li class="arrow"><a href="demos/main/ajax_long.html">Long GET Example</a></li>
+		 <li class="arrow"><a href="#callback">With Callback</a></li> </ul>
+         </div>
+	 </div>
+	 <div id="home" class="current">
+	 <div class="toolbar">
+	 <H1>오늘 뭐먹지?</H1>
+	 <a class="button slideup" id="infoButton" href="#about">About</a>
+	 </div>
+	 <div class="scroll">
+	 <ul class="rounded">
+	 <li class="arrow"><a href="#whateat" class="slideup">오늘 뭐 먹지?</a></li> 
+	 <li class="arrow"><a href="#wherefood" class="flip">근처에 맛있는게 뭐가 있지?</a></li>
+	 <li class="arrow"><a href="#whopay" class="cube">오늘은 누가 쏠까?</a></li>
+	 </ul>
+	 </div>
+	 </div>
+
+	 <form id="ajax_post" action="/ajax_post" method="POST" class="form">
                 <div class="toolbar">
-                    <h1>근처에 맛있는게 뭐가 있지?</h1>
-                    <a class="back" href="#home">Home</a>
+                    <h1>Post Demo</h1>
+                    <a class="back" href="#">Ajax</a>
                 </div>
                 <div class="scroll">
                     <ul class="rounded">
-                        <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
-                        <li class="arrow"><a href="ajax.html">GET Example</a></li>
-                        <li class="arrow"><a href="ajax_long.html">Long GET Example</a></li>
-                        <li class="arrow"><a href="#callback">With Callback</a></li>
+                        <li><input type="text" name="zip" value="" placeholder="Zip Code" /></li>
                     </ul>
-                </div>
-            </div>
-            <div id="whopay">
-                <div class="toolbar">
-                    <h1>AJAX</h1>
-                    <a class="back" href="#home">Home</a>
-                </div>
-                <div class="scroll">
+                    <h2>Favorite color?</h2>
                     <ul class="rounded">
-                        <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
-                        <li class="arrow"><a href="ajax.html">GET Example</a></li>
-                        <li class="arrow"><a href="ajax_long.html">Long GET Example</a></li>
-                        <li class="arrow"><a href="#callback">With Callback</a></li>
+                        <li><input type="radio" name="color" value="green" title="Green" /></li>
+                        <li><input type="radio" name="color" value="blue" title="Blue" /></li>
+                        <li><input type="radio" name="color" value="red" title="Red" /></li>
                     </ul>
+                    <a style="margin-top: 10px; margin-bottom: 10px; color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Submit</a>
                 </div>
-            </div>
-			<div id="home" class="current">
-				<div class="toolbar">
-					<H1>오늘 뭐먹지?</H1>
-					<a class="button slideup" id="infoButton" href="#about">About</a>
-				</div>
-				<div class="scroll">
-					<ul class="rounded">
-						<li class="arrow"><a href="#whateat">오늘 뭐 먹지?</a></li>
-						<li class="arrow"><a href="#wherefood">근처에 맛있는게 뭐가 있지?</a></li>
-						<li class="arrow"><a href="#whopay">오늘은 누가 쏠까?</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+	</form>
+
+	 </div>
+
+
 	</body>
 </html>
 
