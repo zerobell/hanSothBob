@@ -1,206 +1,120 @@
-<!doctype html>
-<html manifest="cache.manifest">
-	<head>
-	<title>XENER HTML5 Study Group</title>
-	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="themes/css/jqtouch.css" title="jQTouch">
-	<script src="src/lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="src/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="extensions/jqt.themeswitcher.min.js" type="application/x-javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">
-		var jQT = new $.jQTouch({
-			icon: 'jqtouch.png',
-			icon4: 'jqtouch4.png',
-			addGlossToIcon: false,
-			startupScreen: 'jqt_startup.png',
-			statusBar: 'black-translucent',
-			themeSelectionSelector: '#jqt #themes ul',
-			preloadImages: []
-		});
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>jQTouch &mdash; jQuery plugin for mobile web development</title>
+    <meta name="description" content="A jQuery plugin for mobile web development." />
+    <meta name="keywords" content="jqtouch, jquery, mobile, iphone, ipod, touch, android, webkit" />
+    
+    <link rel="alternate" type="application/rss+xml" title="jQTouch Blog" href="http://blog.jqtouch.com/rss" />
+    <link rel="stylesheet" href="css/jqt.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="js/jquery.tweet.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(function(){
+        $(".tweet").tweet({
+            username: "jqtouch",
+            avatar_size: 0,
+            count: 5,
+            loading_text: ""
+        });
+        $('input[type="text"]').one('focus',function(){
+            $(this).removeClass('sample').val('');
+        });
+    })
 
-		// Some sample Javascript functions:
-		$(function(){
+    </script>
+</head>
+<body>
+    <div id="top">
+        <div class="center">
+            <h1><img src="img/logo.gif" width="250" height="63" /></h1>
+            <p>A jQuery plugin for mobile web development on the iPhone, <br />Android, iPod Touch, and other forward-thinking devices.</p>
+            
+            <div id="vid">
+                <iframe src="http://player.vimeo.com/video/6353874?title=0&amp;byline=0&amp;color=c9ff23&amp;autoplay=1&amp;loop=1" width="192" height="288" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="band">
+        <div class="center">
+            <a id="dl" href="https://github.com/senchalabs/jQTouch/zipball/b3.1">Download <span class="ver">Version 1, beta 3</span></a>
+            <div class="preview">
+                <a id="pre" href="/preview/demos/main/">Preview</a> on your iPhone or in <a href="http://nightly.webkit.org/">WebKit</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="bot">
+        <div class="center">
+            <div id="side">
 
-			// Show a swipe event on swipe test
-			$('#swipeme').swipe(function(evt, data) {
-				var details = !data ? '': '<strong>' + data.direction + '/' + data.deltaX +':' + data.deltaY + '</strong>!';
-				$(this).html('You swiped ' + details );
-				$(this).parent().after('<li>swiped!</li>')
-				});
+                <p>Sign up for jQTouch news!</p>
 
-			$('#tapme').tap(function(){
-				$(this).parent().after('<li>tapped!</li>')
-				});
+                <form action="http://kaneda.createsend.com/t/y/s/ijjrjh/" method="post">
+                    <input type="text" name="cm-ijjrjh-ijjrjh" id="ijjrjh-ijjrjh" class="sample" value="Enter your email&hellip;" class="sample" />
+                    <input class="signup" type="image" src="img/signup.png" value="Subscribe" />
+                </form>
 
-			$('a[target="_blank"]').bind('click', function() {
-				if (confirm('This link opens in a new window.')) {
-				return true;
-				} else {
-				return false;
-				}
-				});
+                <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pub=morfunk" id="share">Share this page</a>
+                <script type="text/javascript">
+                var addthis_config = {
+                     ui_header_color: "#ffffff",
+                     ui_cobrand: "jQTouch",
+                     ui_header_background: "#63d610",
+                     ui_click: true
+                }
+                </script>
+                <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.min.js?pub=morfunk"></script>
 
-			// Page animation callback events
-			$('#pageevents').
-				bind('pageAnimationStart', function(e, info){ 
-						$(this).find('.info').append('Started animating ' + info.direction + '&hellip;  And the link ' +
-							'had this custom data: ' + $(this).data('referrer').data('custom') + '<br>');
-						}).
-			bind('pageAnimationEnd', function(e, info){
-					$(this).find('.info').append('Finished animating ' + info.direction + '.<br><br>');
+            </div>
+            <h2><strong>Features (Now Beta 3!):</strong> <a href="http://wiki.github.com/senchalabs/jQTouch/gettingstarted">Easy Setup</a> &middot; <a href="http://wiki.github.com/senchalabs/jQTouch/animations">Native WebKit Animations</a> &middot; Image Preloading<br />
+            <a href="http://wiki.github.com/senchalabs/jQTouch/callbackevents">Callback Events</a> &middot; <a href="http://wiki.github.com/senchalabs/jQTouch/themingstyling">Flexible Themes</a> &middot; MIT Licensed<br />
+            <a href="http://wiki.github.com/senchalabs/jQTouch/callbackevents">Swipe Detection</a> &middot; <a href="http://wiki.github.com/senchalabs/jQTouch/extensions">Extensions</a>
+            </h2>
+            <h2>Built by <a href="http://9-bits.com" title="Designer, developer, blogger">David Kaneda</a> and maintained by <a href="http://www.jonathanstark.com/">Jonathan Stark</a>.<br /><a href="http://github.com/senchalabs/jQTouch">Source code, issue tracking, and docs on GitHub.</a>
+            </h2>
+                
+            <h3>Activity on <a href="http://twitter.com/jqtouch">Twitter</a> and <a href="http://blog.jqtouch.com/">the blog</a>:</h3>
+            <div class="tweet">
+                
+            </div>
+        </div>
+    </div>
+    <div id="ftr">
+        <div class="center">
 
-					});
+            
+            <div class="info">
+                <p><a href="http://www.sencha.com" style="border: 0; padding: 10px 0; display: block;"><img src="img/senchalabs.png" alt="Part of Sencha Labs" /></a></p>
+                <p>
+                    You may also enjoy <a href="http://www.webkitbits.com/">WebKitBits, a blog about all things WebKit</a>.
+                <br /><br />
+                
+                &copy; 2009&ndash;2011 <a href="http://9-bits.com">David Kaneda</a>. Built with HTML5, CSS, and jQuery.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <iframe src="http://www.tumblr.com/dashboard/iframe?src=http%3A%2F%2Fblog.jqtouch.com%2F" 
+    border="0" scrolling="no" width="324" height="25" allowTransparency="true"
+    frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px;
+    background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><script type="text/javascript">_qoptions={qacct:"p-19UtqE8ngoZbM"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.min.js"></script><noscript><img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif" style="display:none; border-width:0px; height:1px; width:1px;"/></noscript><!-- END TUMBLR CODE -->
+    <a href="http://github.com/senchalabs/jQTouch"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub" /></a>
 
-			// Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
-			$('#callback').bind('pageAnimationEnd', function(e, info){
-					// Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
-					if (!$(this).data('loaded')) {
-					// Append a placeholder in case the remote HTML takes its sweet time making it back
-					// Then, overwrite the "Loading" placeholder text with the remote HTML
-					$(this).append($('<div>Loading</div>').load('ajax.html .info', function() {        
-							// Set the 'loaded' var to true so we know not to reload
-							// the HTML next time the #callback div animation ends
-							$(this).parent().data('loaded', true);  
-							}));
-					}
-					});
-			// Orientation callback event
-			$('#jqt').bind('turn', function(e, data){
-					$('#orient').html('Orientation: ' + data.orientation);
-					});
+    <script type="text/javascript">
 
-		});
-	</script>
-        <style type="text/css" media="screen">
-            #jqt.fullscreen #home .info {
-                display: none;
-            }
-            div#jqt #about {
-                padding: 100px 10px 40px;
-                text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
-                color: #999;
-                font-size: 13px;
-                text-align: center;
-                background: #161618;
-            }
-            div#jqt #about p {
-                margin-bottom: 8px;
-            }
-            div#jqt #about a {
-                color: #fff;
-                font-weight: bold;
-                text-decoration: none;
-            }
-        </style>
-	</head>
-	<body>
-		<div id="jqt">
-			<div id="about">
-                <div class="toolbar">
-                    <h1>AJAX</h1>
-                    <a class="back" href="#home">Home</a>
-                </div>
-				<div class="scroll">
-					<p><strong>Xener HTML5 Study Group</strong><br>
-					Version 0.1<br>
-					<a href="http://www.xener.com">go to xener systems</a><br></p>
-				</div>
-			</div>
-            <div id="whateat">
-                <div class="toolbar">
-                    <h1>오늘 점심은 어떻게 할까요?</h1>
-                    <a class="back" href="#home">Home</a>
-                </div> 
-		<form class="scroll" action="/show"> 
-		<ul class="rounded"> 
-		<li>인원<input type="number" name="zip" placeholder="인원" id="some_name" min="1" max="10" value="4"/></li>  
-		<li class="arrow"> 거리 
-		<select id="distance"> 
-			 <optgroup label="거리">
-			 <option value ="0" default>거리</option>
-			 <option value ="100">100m</option>
-			 <option value ="300">300m</option>
-			 <option value ="500">500m</option>
-			 <option value ="700">700m</option>
-			 <option value ="1000">1000m</option>
-			 </optgroup> 
-		</select> 
-		</li> 
-		<li>옵션</li>
-		 <li><input type="checkbox" name="food1" value="punch1" title="숙취 해소" /></li>
-		 <li><input type="checkbox" name="food2" value="punch2" title="얼큰한 국물" /></li>
-		 <li><input type="checkbox" name="food3" value="punch3" title="깔끔한 음식" /></li>
-		 <li><input type="checkbox" name="food4" value="punch4" title="뷔페" /></li>
-                 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
-		 </ul>
-	        </form> 
-	 </div>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-252194-14']);
+      _gaq.push(['_setDomainName', 'jqtouch.com']);
+      _gaq.push(['_trackPageview']);
 
-	 <div id="wherefood">
-	 <div class="toolbar">
-	 <h1>근처에 맛있는게 뭐가 있지?</h1>
-	 <a class="back" href="#home">Home</a>
-	 	</div>
-	 	<div class="scroll">
-	 	<ul class="rounded">
-	 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
-	 <li class="arrow"><a href="demos/main/ajax.html">GET Example</a></li>
-	 <li class="arrow"><a href="demos/main/ajax_long.html">Long GET Example</a></li>
-	 <li class="arrow"><a href="#callback">With Callback</a></li>
-	 	</ul>
-	 </div>
-         
-	 </div>
-	 <div id="whopay">
-	 <div class="toolbar">
-	 <h1>AJAX</h1>
-	 <a class="back" href="#home">Home</a>
-	 </div>
-	 <div class="scroll">
-	 <ul class="rounded">
-		 <li class="arrow"><a href="#ajax_post">POST Form Example</a></li>
-		 <li class="arrow"><a href="demos/main/ajax.html">GET Example</a></li>
-		 <li class="arrow"><a href="demos/main/ajax_long.html">Long GET Example</a></li>
-		 <li class="arrow"><a href="#callback">With Callback</a></li> </ul>
-         </div>
-	 </div>
-	 <div id="home" class="current">
-	 <div class="toolbar">
-	 <H1>오늘 뭐먹지?</H1>
-	 <a class="button slideup" id="infoButton" href="#about">About</a>
-	 </div>
-	 <div class="scroll">
-	 <ul class="rounded">
-	 <li class="arrow"><a href="#whateat" class="slideup">오늘 뭐 먹지?</a></li> 
-	 <li class="arrow"><a href="#wherefood" class="flip">근처에 맛있는게 뭐가 있지?</a></li>
-	 <li class="arrow"><a href="#whopay" class="cube">오늘은 누가 쏠까?</a></li>
-	 </ul>
-	 </div>
-	 </div>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.min.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-	 <form id="ajax_post" action="/ajax_post" method="POST" class="form">
-                <div class="toolbar">
-                    <h1>Post Demo</h1>
-                    <a class="back" href="#">Ajax</a>
-                </div>
-                <div class="scroll">
-                    <ul class="rounded">
-                        <li><input type="text" name="zip" value="" placeholder="Zip Code" /></li>
-                    </ul>
-                    <h2>Favorite color?</h2>
-                    <ul class="rounded">
-                        <li><input type="radio" name="color" value="green" title="Green" /></li>
-                        <li><input type="radio" name="color" value="blue" title="Blue" /></li>
-                        <li><input type="radio" name="color" value="red" title="Red" /></li>
-                    </ul>
-                    <a style="margin-top: 10px; margin-bottom: 10px; color:rgba(0,0,0,.9)" href="#" class="submit whiteButton">Submit</a>
-                </div>
-	</form>
-
-	 </div>
-
-
-	</body>
+    </script>
+</body>
 </html>
-
-
